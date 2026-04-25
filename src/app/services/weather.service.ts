@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class WeatherService {
 
-  private apiUrl = 'http://127.0.0.1:8000/weather';
+  private apiUrl = 'https://weather-app-x9sd.onrender.com/weather';
 
   constructor(private http: HttpClient) {}
 
