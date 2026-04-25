@@ -1,59 +1,114 @@
-# WeatherAppFrontend
+# Weather App Frontend (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
+A simple and responsive **Weather Application UI** built with Angular v19 that fetches real-time weather forecast data from a Python FastAPI backend.
 
-## Development server
+---
 
-To start a local development server, run:
+## Features
 
-```bash
-ng serve
+* Search weather by city name
+* Toggle between Celsius (°C) and Fahrenheit (°F)
+* View daily forecast (min/max temperature)
+* Fast and responsive UI
+* Integrated with backend API
+
+---
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── home/
+│   │   │   ├── home.component.ts
+│   │   │   ├── home.component.html
+│   │   │   └── home.component.css
+│   │   └── weather/
+│   │       ├── weather.component.ts
+│   │       ├── weather.component.html
+│   │       └── weather.component.css
+│   ├── services/
+│   │   └── weather.service.ts
+│   ├── app-routing.module.ts
+│   └── app.module.ts
+├── assets/
+└── styles.scss
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Prerequisites
 
-```bash
-ng generate component component-name
+* Node.js (v18+ recommended)
+* Angular CLI
+
+---
+
+## Backend Integration
+
+This app connects to a FastAPI backend.
+
+Default API endpoint:
+
+```id="o4v1hs"
+http://127.0.0.1:8000/weather
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Example request:
 
-```bash
-ng generate --help
+```id="vx7t3c"
+GET /weather?city=Chennai&units=metric
 ```
 
-## Building
+---
 
-To build the project run:
+## Configuration
 
-```bash
-ng build
+If your backend runs on a different URL, update it in:
+
+```id="yq9s1l"
+src/app/services/weather.service.ts
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Example:
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```ts id="jz0d7k"
+private apiUrl = 'http://127.0.0.1:8000/weather';
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Styling
 
-```bash
-ng e2e
+* Basic CSS / optional Tailwind support
+* Responsive layout using Flexbox
+
+---
+
+## Sample UI Flow
+
+1. Enter city name
+2. Select unit (Celsius/Fahrenheit)
+3. Click **Get Weather**
+4. View forecast results
+
+---
+
+## Backend Repo
+
+Make sure backend is running:
+
+```bash id="d4n8sj"
+uvicorn main:app --reload
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## Author
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Shilpa K**
+Senior Angular Developer | Frontend Specialist
+
+---
